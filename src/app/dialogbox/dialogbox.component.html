@@ -1,0 +1,24 @@
+<ol>
+  <li>
+  <form class="example-form"  >
+    <li>
+        <img  [src]="plus"  style="margin-left: 969px;" >
+        <div layout-gt-xs="row" id="content" >
+            <mat-form-field class="example-full-width">
+                <input type="email" style="width:400%;" formControlName="street"  matInput placeholder="Email Adress" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
+            </mat-form-field>
+            <div fxLayout="row"  fxLayoutGap="2rem" style="margin-left:650px;margin-top:-70px;">
+                <img  [src]="contributor">
+                <img  [src]="approval">
+                <img [src]="viewer">
+            </div>
+        </div>
+        <!-- <div style="margin-top: 400px;margin-left:200px;margin 59px;"> -->
+              <button mat-raised-button color="primary"style="margin-top: 400px;margin-left:200px;margin 59px;">INVITE</button>
+              <button mat-raised-button color="warn">CANCEL</button>
+        <!-- </div> -->
+        </li>
+    </form>
+  </li>
+</ol>
+<div>
