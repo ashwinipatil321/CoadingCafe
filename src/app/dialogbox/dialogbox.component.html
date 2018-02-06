@@ -1,24 +1,28 @@
-<ol>
-  <li>
-  <form class="example-form"  >
-    <li>
-        <img  [src]="plus"  style="margin-left: 969px;" >
-        <div layout-gt-xs="row" id="content" >
-            <mat-form-field class="example-full-width">
-                <input type="email" style="width:400%;" formControlName="street"  matInput placeholder="Email Adress" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
-            </mat-form-field>
-            <div fxLayout="row"  fxLayoutGap="2rem" style="margin-left:650px;margin-top:-70px;">
-                <img  [src]="contributor">
-                <img  [src]="approval">
-                <img [src]="viewer">
-            </div>
+<div class="body">
+  <form class="example-form" [formGroup]="myForm">
+    <div class="panel-body" [formGroupName]="i">
+      <div *ngFor="let addresses of myForm.controls.addresses.controls; let i=index" class="panel panel-default">
+        <div layout="row" id="content">
+          <mat-form-field class="example-full-width" fxLayoutGap="2rem">
+            <input type="email" matInput placeholder="Email Adress" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
+          </mat-form-field>
+          <!-- <li  class="img" fxLayout="row"  fxLayoutGap="2rem" >   -->
+          <img [src]="contributor" hspace="10" onclick="chBackcolor('red')">
+          <img [src]="approval" hspace="10">
+          <img [src]="viewer" hspace="10">
+          <!-- </li> -->
+          <br>
         </div>
-        <!-- <div style="margin-top: 400px;margin-left:200px;margin 59px;"> -->
-              <button mat-raised-button color="primary"style="margin-top: 400px;margin-left:200px;margin 59px;">INVITE</button>
-              <button mat-raised-button color="warn">CANCEL</button>
-        <!-- </div> -->
-        </li>
-    </form>
-  </li>
-</ol>
+      </div>
+    </div>
+    <img src="/assets/img/plus.png" (click)="addAddress()" style="cursor: default;margin-left:940px;">
+
+  </form>
+</div>
+
+<div class="btn">
+  <button mat-raised-button color="primary">INVITE</button>
+  <button mat-raised-button color="warn">CANCEL</button>
+
+</div>
 <div>
