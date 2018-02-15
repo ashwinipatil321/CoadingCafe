@@ -1,0 +1,23 @@
+
+<div fxLayout="row" class="maindiv" style="background-color:#ffffff">
+
+  <div fxLayout="column" fxFlex="50%">
+
+        <img [src]="codingcafelogo" class="image">
+
+  </div>
+  <div fxLayout="column" fxFlex="50%" fxLayoutGap="50px" fxLayoutAlign="center" class="example-container">
+
+          <button mat-button (click)="sendOTP()" class="btn1">sendOTP</button>
+            <mat-form-field class="example-full-width">
+                  <input type="email" matInput [(ngModel)]="model.email" required placeholder="Email Address/Phone#" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
+          </mat-form-field>
+
+          <mat-form-field class="matField">
+                  <input type="text" matInput placeholder="OTP" [(ngModel)]="model.userOTP">
+          </mat-form-field>
+          <button mat-raised-button (click)="verfiyOtp()" class="btn">SIGN IN</button>
+
+  </div>
+  
+</div>

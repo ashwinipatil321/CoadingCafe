@@ -1,0 +1,29 @@
+import { Component, OnInit,OnDestroy} from '@angular/core';
+import { Router } from '@angular/router';
+import { MatInputModule } from '@angular/material';
+import { UserService } from '../_services/index';
+
+@Component({
+  selector: 'app-registeration',
+  templateUrl: './registeration.component.html',
+  styleUrls: ['./registeration.component.css']
+})
+export class RegisterationComponent implements OnInit {
+  model: any = {};
+  loading = false;
+  codingcafelogo = "/assets/img/codingcafelogo.png";
+  name = 'Select teck stack';
+  constructor(private router: Router,
+    private userService: UserService) { }
+
+  ngOnInit() {
+  }
+  register() {
+    this.loading = true;
+    this.userService.create(this.model)
+    .subscribe( data => {
+          console.log("User created successfully.");
+          this.router.navigate(['/login']);
+        });
+  }
+}

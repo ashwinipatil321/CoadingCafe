@@ -1,0 +1,74 @@
+
+.image {
+  margin: 0 auto;
+  margin-left: 25%;
+  margin-top: 25%;
+}
+.example-container {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height:120%;
+  border-left: 1px solid #00000021;
+  margin-top: -3%;
+}
+.mat-form-field
+{
+  margin:0 auto;
+}
+.example-container>* {
+  width: 50%;
+}
+.btn {
+  background-color: #00BFA5;
+  margin: 0 auto;
+  margin-top: 25%;
+  font-size: 18px;
+  color: white;
+
+}
+.body
+{
+  margin-top: 2%;
+}
+.btn1{
+  margin: 0 auto;
+}
+
+
+/* .mat-raised-button
+{
+  background-color:#00BFA5;
+  margin-top: 30%;
+  width: 50%;
+  height: 8%;
+  font-size: xx-large;
+color: aliceblue;
+}
+
+.divDemo1
+{
+width:50%;
+height: 100%;
+margin-left: 20%;
+border-left: 1px solid #00000021;
+}
+
+.example-full-width {
+  width: 80%;
+  height: 39.2344px;
+  top: 40%;
+  left:10%;
+}
+.matField
+{
+  width:425px;
+  height: 39.2344px;
+  top:55%;
+}
+.divDemo3
+{
+margin-top: 10%;
+font-size: 129%;
+margin-left: 72px
+} */

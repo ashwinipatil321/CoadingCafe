@@ -1,7 +1,8 @@
 export interface Customer {
-    addresses: Address[];
+    arrayList: Address[];
 }
 
 export interface Address {
-  
+    email: string;
+     role: string;
 }

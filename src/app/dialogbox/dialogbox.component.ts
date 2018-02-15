@@ -1,54 +1,70 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormArray, FormBuilder, Validators } from '@angular/forms';
 import { Customer } from '../customer.interface';
+import { UserService } from '../_services/index';
+import { Router } from '@angular/router';
+
 
 @Component({
-  selector: 'app-dialogbox',
+  selector : 'app-dialogbox',
   templateUrl: './dialogbox.component.html',
   styleUrls: ['./dialogbox.component.css']
 })
 
 export class DialogboxComponent implements OnInit {
   public myForm: FormGroup;
+  model:any;
+  loading = false;
   contributor = "/assets/img/contributor.png";
   approval = "/assets/img/user1.png";
   viewer = "/assets/img/viewer.png";
 
-  constructor(private _fb: FormBuilder) {
+  constructor(private _fb: FormBuilder,private userService: UserService,private router: Router) {
     this.myForm = this._fb.group({
-      name: ['', [Validators.required, Validators.minLength(5)]],
       addresses: this._fb.array([])
     });
     this.addAddress();
-
   }
   @Input('group')
   public adressForm: FormGroup;
   ngOnInit() {
+          this.myForm = this._fb.group({
+              name: ['', [Validators.required, Validators.minLength(5)]],
+              addresses: this._fb.array([])
+          });
 
-  }
-  initAddress() {
-    return this._fb.group({
-      street: ['', Validators.required],
-      postcode: ['']
-    });
-  }
+          // add address
+          this.addAddress();
 
-  addAddress() {
-    const control = <FormArray>this.myForm.controls['addresses'];
-    const addrCtrl = this.initAddress();
-    control.push(addrCtrl);
-  }
+          /* subscribe to addresses value changes */
+          // this.myForm.controls['addresses'].valueChanges.subscribe(x => {
+          //   console.log(x);
+          // })
+      }
 
-  removeAddress(i: number) {
-    const control = <FormArray>this.myForm.controls['addresses'];
-    control.removeAt(i);
-  }
+      initAddress() {
+          return this._fb.group({
+              email: ['', Validators.required],
+              role: ['']
+          });
+      }
+      addRule(address : any,role : string ) : void {
+        console.log(address,role);
+        address.controls.role.patchValue(role);
+      }
+      addAddress() {
+          const control = <FormArray>this.myForm.controls['addresses'];
+          const addrCtrl = this.initAddress();
+          control.push(addrCtrl);
+      }
+      inviteUser(addArrayList : any)
+      {
+        this.loading = true;
+        console.log();
+           this.userService.saveAdmin(addArrayList.addresses)
+           .subscribe( data => {
+                 console.log("User invited successfully.");
 
-  save(model: Customer) {
-    console.log(model);
-  }
-  chBackcolor(color) {
-   document.body.style.background = color;
-}
+               });
+      }
 }

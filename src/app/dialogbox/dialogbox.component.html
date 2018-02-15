@@ -1,27 +1,26 @@
 <div class="body">
-  <form class="example-form" [formGroup]="myForm">
-    <div class="panel-body" [formGroupName]="i">
+  <form class="example-form" [formGroup]="myForm" #myfrom>
+    <div class="panel-body" >
       <div *ngFor="let addresses of myForm.controls.addresses.controls; let i=index" class="panel panel-default">
-        <div layout="row" id="content">
-          <mat-form-field class="example-full-width" fxLayoutGap="2rem">
-            <input type="email" matInput placeholder="Email Adress" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
+        <div layout="row" id="content" [formGroup]="addresses" >
+          <mat-form-field class="example-full-width"  fxLayoutGap="2rem">
+            <input type="email" name="email" formControlName="email" matInput placeholder="Email Adress" class="form-control"  required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
           </mat-form-field>
-          <!-- <li  class="img" fxLayout="row"  fxLayoutGap="2rem" >   -->
-          <img [src]="contributor" hspace="10" onclick="chBackcolor('red')">
-          <img [src]="approval" hspace="10">
-          <img [src]="viewer" hspace="10">
-          <!-- </li> -->
+
+          <a (click)="addRule(addresses,'contributor')"><img [src]="contributor" hspace="10" style="cursor:pointer"> </a>
+          <a (click)="addRule(addresses,'approval')"><img [src]="approval" hspace="10" style="cursor:pointer"></a>
+          <a (click)="addRule(addresses,'viewer')"><img [src]="viewer" hspace="10" style="cursor:pointer"></a>
           <br>
         </div>
       </div>
     </div>
     <img src="/assets/img/plus.png" (click)="addAddress()" style="cursor: default;margin-left:940px;">
-
   </form>
 </div>
 
-<div class="btn">
-  <button mat-raised-button color="primary">INVITE</button>
+<div class="btn" >
+   <!-- <pre>form value: <br>{{myForm.value | json}}</pre> -->
+  <button mat-raised-button color="primary" (click)="inviteUser(myForm.value)">INVITE</button>
   <button mat-raised-button color="warn">CANCEL</button>
 
 </div>

@@ -10,39 +10,53 @@ import { TopnavbarComponent } from './topnavbar/topnavbar.component';
 import { MatIconModule } from "@angular/material/icon";
 import { FlexLayoutModule } from "@angular/flex-layout";
 import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatDialog, MatDialogRef,MatInputModule, MAT_DIALOG_DATA} from '@angular/material';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import {DialogboxComponent } from './dialogbox/dialogbox.component';
 import { MatSelectModule } from '@angular/material/select';
 // import { AddressComponent } from './address/address.component';
+import {RegisterationComponent} from './registeration/registeration.component';
 import { Component } from '@angular/core';
+// import { UserService } from './user.service';
+import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
+import { routing } from './app.routing';
+import { RouterModule } from '@angular/router';
+import {MatInputModule} from '@angular/material';
+import { LoginComponent } from './login/login.component';
+import { AuthenticationService,UserService} from './_services/index';
 
-// import {routes} from './app.routing';
+
 @NgModule({
   declarations: [
     AppComponent,
     TopnavbarComponent,
     DialogboxComponent,
+    RegisterationComponent,
+    LoginComponent,
     // AddressComponent,
   ],
   imports: [
-    BrowserModule,
-    MatButtonModule,
-    MatToolbarModule,
-    MatIconModule,
-    FlexLayoutModule,
-    MatDialogModule,
-    MatFormFieldModule,
-    BrowserAnimationsModule,
-     FormsModule,
-     MatInputModule,
-     MatSelectModule,
-		 ReactiveFormsModule
-    // routes
+      BrowserModule,
+      MatButtonModule,
+      MatToolbarModule,
+      MatIconModule,
+      FlexLayoutModule,
+      MatDialogModule,
+      MatFormFieldModule,
+      BrowserAnimationsModule,
+      FormsModule,
+      MatInputModule,
+      MatSelectModule,
+		  ReactiveFormsModule,
+      HttpModule,
+      HttpClientModule,
+      routing,
+      RouterModule.forRoot([])
   ],
   entryComponents: [
        DialogboxComponent
    ],
-  providers: [],
+  providers: [AuthenticationService,UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

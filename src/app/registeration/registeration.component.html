@@ -1,0 +1,20 @@
+
+<div fxLayout="row"  style="background-color:#ffffff">
+
+      <div fxLayout="column" fxFlex="50%" >
+          <img [src]="codingcafelogo" class="image">
+      </div>
+      <div fxLayout="column" fxFlex="50%" fxLayoutGap="50px"  class="body" fxLayoutAlign="center" class="example-container"  >
+
+          <mat-form-field >
+            <input type="text" id="name" matInput placeholder="Name" name="name" [(ngModel)]="model.name" required   #name="ngModel">
+          </mat-form-field>
+
+          <mat-form-field class="matField">
+            <input type="number" matInput name="mobileNumber" [(ngModel)]="model.contactNumber" placeholder="Phone number" >
+          </mat-form-field>
+
+            <button mat-raised-button   (click)=register()  class="btn">SIGN UP</button>
+
+    </div>
+  </div>
