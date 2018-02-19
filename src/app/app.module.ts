@@ -24,6 +24,9 @@ import { RouterModule } from '@angular/router';
 import {MatInputModule} from '@angular/material';
 import { LoginComponent } from './login/login.component';
 import { AuthenticationService,UserService} from './_services/index';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatCardModule} from '@angular/material/card';
+
 
 
 @NgModule({
@@ -33,6 +36,7 @@ import { AuthenticationService,UserService} from './_services/index';
     DialogboxComponent,
     RegisterationComponent,
     LoginComponent,
+
     // AddressComponent,
   ],
   imports: [
@@ -51,6 +55,8 @@ import { AuthenticationService,UserService} from './_services/index';
       HttpModule,
       HttpClientModule,
       routing,
+      MatTooltipModule,
+      MatCardModule,
       RouterModule.forRoot([])
   ],
   entryComponents: [

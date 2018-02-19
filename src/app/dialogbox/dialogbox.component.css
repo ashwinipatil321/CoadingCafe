@@ -22,3 +22,58 @@
   justify-content: center;
   margin-bottom: 5px;
 }
+.mat-tooltip {
+size:45px;
+}
+/* input[type="checkbox"] {
+    content: url('http://placekitten.com/200/210');
+    display: block;
+    width: 200px;
+    height: 200px;
+}
+input[type="checkbox"]:checked {
+    content: url('http://placekitten.com/210/220');
+}
+.native-hidden {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+} */
+
+/* .image
+{
+  background-image: url('/assets/img/ngClickContributor.png');
+  margin-top: 10px;
+
+} */
+
+/* a:active  {
+  background-image: url('/assets/img/ngClickContributor.png');
+
+
+ }
+input[type="checkbox"] {
+    content: url('/assets/img/contributor.png');
+}
+input[type="checkbox"]:checked {
+    content: url('/assets/img/ngClickContributor.png');
+}
+
+input[type="checkbox1"] {
+    content: url('/assets/img/user1.png');
+}
+input[type="checkbox1"]:checked {
+    content: url('/assets/img/ngClickApprover.png');
+}
+
+input[type="checkbox2"] {
+    content: url('/assets/img/viewer.png');
+}
+input[type="checkbox2"]:checked {
+    content: url('/assets/img/ngClickViewer.png');
+} */
+/* .native-hidden {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}  */

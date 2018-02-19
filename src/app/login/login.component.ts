@@ -28,6 +28,7 @@ export class LoginComponent implements OnInit {
               data => {
                 console.log("OTP Send Sucessfully");
                   // this.router.navigate([]);
+                  alert('Login successfully');
               },
               error => {
                   this.loading = false;

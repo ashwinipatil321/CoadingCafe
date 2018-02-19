@@ -24,6 +24,7 @@ export class RegisterationComponent implements OnInit {
     .subscribe( data => {
           console.log("User created successfully.");
           this.router.navigate(['/login']);
+           alert('User registeration done successfully');
         });
   }
 }

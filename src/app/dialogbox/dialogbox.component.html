@@ -2,14 +2,14 @@
   <form class="example-form" [formGroup]="myForm" #myfrom>
     <div class="panel-body" >
       <div *ngFor="let addresses of myForm.controls.addresses.controls; let i=index" class="panel panel-default">
-        <div layout="row" id="content" [formGroup]="addresses" >
+        <div layout="row" id="content" [formGroup]="addresses" class="tooltip" >
           <mat-form-field class="example-full-width"  fxLayoutGap="2rem">
             <input type="email" name="email" formControlName="email" matInput placeholder="Email Adress" class="form-control"  required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
           </mat-form-field>
-
-          <a (click)="addRule(addresses,'contributor')"><img [src]="contributor" hspace="10" style="cursor:pointer"> </a>
-          <a (click)="addRule(addresses,'approval')"><img [src]="approval" hspace="10" style="cursor:pointer"></a>
-          <a (click)="addRule(addresses,'viewer')"><img [src]="viewer" hspace="10" style="cursor:pointer"></a>
+            <span  mat-raised-button matTooltip="contributor"> <a type="checkbox" class="image"(click)="addRule(addresses,'contributor')">
+            <img  [src]="contributor" hspace="10" style="cursor:pointer"/></a></span>
+            <span matTooltip="Approver"> <a (click)="addRule(addresses,'approval')"><img [src]="approval" hspace="10" style="cursor:pointer"></a></span>
+            <span  matTooltip="Viewer">  <a (click)="addRule(addresses,'viewer')"><img [src]="viewer" hspace="10" style="cursor:pointer"></a></span>
           <br>
         </div>
       </div>
