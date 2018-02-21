@@ -7,26 +7,11 @@
           <mat-form-field >
               <input type="text" id="name" matInput placeholder="Name" name="name" [(ngModel)]="model.name" #name="ngModel"  required pattern="^[a-zA-Z\\s]+">
           </mat-form-field>
-          <div class="md-errors-spacer" [hidden]="name.valid || name.untouched" >
-            <span *ngIf="name.errors && name.errors.required" style="margin-left:45%">
-            Name is required
-            </span>
-            <span  *ngIf="name.errors && name.errors.pattern" style="margin-left:45%">
-              Name is invalid
-            </span>
-          </div>
 
           <mat-form-field class="matField">
             <input type="number" matInput name="mobileNumber" [(ngModel)]="model.contactNumber" #contactNumber="ngModel" placeholder="Phone number" required  pattern="/[0-9\+\-\ ]/" >
           </mat-form-field>
-          <div class="md-errors-spacer" [hidden]="contactNumber.valid || contactNumber.untouched" >
-            <span *ngIf="contactNumber.errors && contactNumber.errors.required" style="margin-left:45%">
-                mobile Number is required
-            </span>
-            <span  *ngIf="contactNumber.errors && contactNumber.errors.pattern" style="margin-left:45%">
-                mobile Number is invalid
-            </span>
-          </div>
+
         <button mat-raised-button   (click)=register()  class="btn">SIGN UP</button>
     </div>
 </div>

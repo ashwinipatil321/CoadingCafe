@@ -6,7 +6,6 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatDialogModule} from '@angular/material/dialog';
 import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule,FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
-import { TopnavbarComponent } from './topnavbar/topnavbar.component';
 import { MatIconModule } from "@angular/material/icon";
 import { FlexLayoutModule } from "@angular/flex-layout";
 import {MatFormFieldModule} from '@angular/material/form-field';
@@ -26,16 +25,17 @@ import { LoginComponent } from './login/login.component';
 import { AuthenticationService,UserService} from './_services/index';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatCardModule} from '@angular/material/card';
+import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    TopnavbarComponent,
     DialogboxComponent,
     RegisterationComponent,
     LoginComponent,
+    AdmindashboardComponent,
 
     // AddressComponent,
   ],

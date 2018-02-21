@@ -1,27 +1,24 @@
 <div class="body">
   <form class="example-form" [formGroup]="myForm" #myfrom>
-    <div class="panel-body" >
-      <div *ngFor="let addresses of myForm.controls.addresses.controls; let i=index" class="panel panel-default">
-        <div layout="row" id="content" [formGroup]="addresses" class="tooltip" >
-          <mat-form-field class="example-full-width"  fxLayoutGap="2rem">
-            <input type="email" name="email" formControlName="email" matInput placeholder="Email Adress" class="form-control"  required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
-          </mat-form-field>
-            <span  mat-raised-button matTooltip="contributor"> <a type="checkbox" class="image"(click)="addRule(addresses,'contributor')">
-            <img  [src]="contributor" hspace="10" style="cursor:pointer"/></a></span>
-            <span matTooltip="Approver"> <a (click)="addRule(addresses,'approval')"><img [src]="approval" hspace="10" style="cursor:pointer"></a></span>
-            <span  matTooltip="Viewer">  <a (click)="addRule(addresses,'viewer')"><img [src]="viewer" hspace="10" style="cursor:pointer"></a></span>
-          <br>
-        </div>
+    <div *ngFor="let addresses of myForm.controls.addresses.controls; let i=index" class="panel panel-default">
+      <div layout="row" id="content" [formGroup]="addresses" fxLayout="row" fxLayoutAlign="center">
+        <mat-form-field class="example-full-width">
+          <input type="email" name="email" formControlName="email" matInput placeholder="Email Adress" class="form-control" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
+        </mat-form-field>
+        <span mat-raised-button matTooltip="Contributor"> <a (click)="addRule(addresses,'contributor')">
+            <img [src]="contributor" hspace="10" style="cursor:pointer" class="image" /></a></span>
+        <span matTooltip="Approver"> <a (click)="addRule(addresses,'approval')">
+              <img [src]="approval" hspace="10" style="cursor:pointer"  class="image" ></a></span>
+        <span matTooltip="Viewer"> <a (click)="addRule(addresses,'viewer')">
+              <img [src]="viewer" hspace="10" style="cursor:pointer"  class="image" ></a></span>
+        <br>
       </div>
+      <img src="/assets/img/plus.png" (click)="addAddress()" style="cursor: default;margin-left:940px;">
     </div>
-    <img src="/assets/img/plus.png" (click)="addAddress()" style="cursor: default;margin-left:940px;">
   </form>
 </div>
-
-<div class="btn" >
-   <!-- <pre>form value: <br>{{myForm.value | json}}</pre> -->
-  <button mat-raised-button color="primary" (click)="inviteUser(myForm.value)">INVITE</button>
-  <button mat-raised-button color="warn">CANCEL</button>
-
+<div fxLayout="row" fxLayoutAlign="center" fxLayoutGap="55px">
+  <button mat-raised-button id="btn_Invite" fxLayout="column" (click)="inviteUser(myForm.value)">INVITE</button>
+  <button mat-raised-button id="btn_Cancel"  (click)="close()" fxLayout="column">CANCEL</button>
 </div>
 <div>

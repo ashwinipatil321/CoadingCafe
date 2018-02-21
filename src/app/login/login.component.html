@@ -1,33 +1,15 @@
-
-<div fxLayout="row" class="maindiv" >
-
+<div fxLayout="row" class="maindiv">
   <div fxLayout="column" fxFlex="50%">
-
-        <img [src]="codingcafelogo" class="image">
-
+    <img [src]="codingcafelogo" class="image">
   </div>
   <div fxLayout="column" fxFlex="50%" fxLayoutGap="50px" fxLayoutAlign="center" class="example-container">
-
-          <button mat-button (click)="sendOTP()" class="btn1">sendOTP</button>
-            <mat-form-field class="example-full-width">
-                  <input type="email" matInput [(ngModel)]="model.email" #email="ngModel" placeholder="Email Address/Phone#" required
-                pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
-          </mat-form-field>
-          <div class="md-errors-spacer" [hidden]="email.valid || email.untouched" >
-            <span *ngIf="email.errors && email.errors.required" style="margin-left:50%">
-                Email is required
-            </span>
-            <span  *ngIf="email.errors && email.errors.pattern" style="margin-left:50%">
-                Email is invalid
-            </span>
-          </div>
-
-          <mat-form-field class="matField">
-            <input type="text" matInput name="OTP" [(ngModel)]="model.userOTP" placeholder="OTP" >
-          </mat-form-field>
-          <button mat-raised-button (click)="verfiyOtp()" class="btn">SIGN IN</button>
-
+    <button mat-button (click)="sendOTP()" class="btn1">sendOTP</button>
+    <mat-form-field class="example-full-width">
+      <input type="email" matInput [(ngModel)]="model.email" #email="ngModel" placeholder="Email Address/Phone#" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
+    </mat-form-field>
+    <mat-form-field class="matField">
+      <input type="text" matInput name="OTP" [(ngModel)]="model.userOTP" placeholder="OTP">
+    </mat-form-field>
+    <button mat-raised-button (click)="verfiyOtp()" class="btn">SIGN IN</button>
   </div>
-
-
 </div>

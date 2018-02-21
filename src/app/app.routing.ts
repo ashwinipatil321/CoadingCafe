@@ -3,13 +3,14 @@ import { ModuleWithProviders } from '@angular/core';
 import {RegisterationComponent} from './registeration/registeration.component';
 import { AppComponent } from './app.component';
 import { DialogboxComponent } from './dialogbox/dialogbox.component';
-import { TopnavbarComponent } from './topnavbar/topnavbar.component';
 import { LoginComponent } from './login/login.component';
+import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
+
 const appRoutes: Routes = [
 
     { path: 'dialog', component: DialogboxComponent },
-    { path: 'registeration', component: RegisterationComponent },
-    { path:'topnavbar' , component:TopnavbarComponent},
+    { path: 'registeration/:uuid', component: RegisterationComponent },
+    { path:'admindashboard' , component:AdmindashboardComponent},
     { path:'login' , component:LoginComponent}
 
     // otherwise redirect to home
