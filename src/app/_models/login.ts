@@ -1,5 +1,4 @@
-export class Login
-{
- email:string;
-userOTP:any;
+export class Login {
+  email: string;
+  userOTP: any;
 }

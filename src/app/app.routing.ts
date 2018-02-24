@@ -7,7 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
 
 const appRoutes: Routes = [
-
+    { path:'',redirectTo:'admindashboard',pathMatch:'full'},
     { path: 'dialog', component: DialogboxComponent },
     { path: 'registeration/:uuid', component: RegisterationComponent },
     { path:'admindashboard' , component:AdmindashboardComponent},

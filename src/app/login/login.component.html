@@ -1,11 +1,10 @@
-<div fxLayout="row" class="maindiv">
-  <div fxLayout="column" fxFlex="50%">
-    <img [src]="codingcafelogo" class="image">
+<div fxLayout="row" style="background-color:#ffffff">
+  <div fxLayout="column" fxLayoutAlign="center" fxFlex="50%">
+    <img [src]="codingcafelogo" class="image" flexla>
   </div>
   <div fxLayout="column" fxFlex="50%" fxLayoutGap="50px" fxLayoutAlign="center" class="example-container">
-    <button mat-button (click)="sendOTP()" class="btn1">sendOTP</button>
     <mat-form-field class="example-full-width">
-      <input type="email" matInput [(ngModel)]="model.email" #email="ngModel" placeholder="Email Address/Phone#" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
+      <input type="email" matInput [(ngModel)]="model.email" #email="ngModel" placeholder="Email Address/Phone#" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" (keyup)="sendOTP($event)">
     </mat-form-field>
     <mat-form-field class="matField">
       <input type="text" matInput name="OTP" [(ngModel)]="model.userOTP" placeholder="OTP">

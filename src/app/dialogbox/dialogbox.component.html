@@ -3,14 +3,19 @@
     <div *ngFor="let addresses of myForm.controls.addresses.controls; let i=index" class="panel panel-default">
       <div layout="row" id="content" [formGroup]="addresses" fxLayout="row" fxLayoutAlign="center">
         <mat-form-field class="example-full-width">
-          <input type="email" name="email" formControlName="email" matInput placeholder="Email Adress" class="form-control" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
+          <input type="email" name="email" formControlName="email"  email="true" matInput placeholder="Email Adress" class="form-control" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
         </mat-form-field>
-        <span mat-raised-button matTooltip="Contributor"> <a (click)="addRule(addresses,'contributor')">
-            <img [src]="contributor" hspace="10" style="cursor:pointer" class="image" /></a></span>
+        <span mat-raised-button matTooltip="Contributor"> <a  (click)="addRule(addresses,'contributor')">
+            <img [src]="contributor"  *ngIf="!active" hspace="10" style="cursor:pointer"  class="image" />
+            <img [src]="ngClickContributor"  *ngIf="active" hspace="10" style="cursor:pointer"  class="image" /></a></span>
+
         <span matTooltip="Approver"> <a (click)="addRule(addresses,'approval')">
-              <img [src]="approval" hspace="10" style="cursor:pointer"  class="image" ></a></span>
+              <img [src]="approval" *ngIf="!active1" hspace="10" style="cursor:pointer"  class="image" >
+              <img [src]="ngClickApprover"  *ngIf="active1" hspace="10" style="cursor:pointer"  class="image" /></a></span>
+
         <span matTooltip="Viewer"> <a (click)="addRule(addresses,'viewer')">
-              <img [src]="viewer" hspace="10" style="cursor:pointer"  class="image" ></a></span>
+              <img [src]="viewer" hspace="10" *ngIf="!active2" style="cursor:pointer"  class="image" >
+              <img [src]="ngClickViewer"  *ngIf="active2" hspace="10" style="cursor:pointer"  class="image" /></a></span>
         <br>
       </div>
       <img src="/assets/img/plus.png" (click)="addAddress()" style="cursor: default;margin-left:940px;">
@@ -22,3 +27,6 @@
   <button mat-raised-button id="btn_Cancel"  (click)="close()" fxLayout="column">CANCEL</button>
 </div>
 <div>
+  <!-- <div [style.background-image] = "isBackground ? 'url(\'/assets/img/contributor.png\')' : 'url(\'//assets/img/ngClickContributor.png\')'">
+
+</div> -->

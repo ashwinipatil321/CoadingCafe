@@ -1,3 +1,3 @@
-export class  UserOTP {
-  userOtp:any;
+export class UserOTP {
+  userOtp: any;
 }

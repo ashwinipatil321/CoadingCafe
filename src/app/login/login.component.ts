@@ -21,19 +21,19 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
        this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
+
   sendOTP() {
       this.loading = true;
-      this.authenticationService.sendOTPService(this.model)
+
+      this.authenticationService.sendOTPService(this.model.email)
           .subscribe(
               data => {
-                console.log("OTP Send Sucessfully");
-                  // this.router.navigate([]);
-                  alert('Login successfully');
+
               },
-              error => {
-                  this.loading = false;
-              });
-}
+          }
+
+
+
   verfiyOtp() {
       this.loading = true;
       console.log("this model otp",this.model)
@@ -48,34 +48,4 @@ export class LoginComponent implements OnInit {
                   this.loading = false;
               });
   }
-
-//
-// login() {
-//         // console.log("login component.ts"+this.model.email+""+this.model.password+"::::::::"+this.model);
-//         this.loading = true;
-//         console.log(this.model);
-//         this.authenticationService.login(this.model)
-//             .subscribe(
-//                 data => {
-//                    console.log("login  data");
-//                   console.log(data.responseMessage);
-//                   let token=data.responseMessage;
-//                      //console.log(JSON.parse(data['_body']));
-//
-//                          if(token!=null){
-//                          this.loading = false;
-//                          localStorage.setItem('token',  token);
-//
-//                          this.router.navigate(['/home']);
-//                      }
-//                      else{
-//                         this.loading = false;
-//                      }
-//               },
-//                 error => {
-//                     console.log(error);
-//                     this.loading = false;
-//                 });
-//
-//     }
 }
