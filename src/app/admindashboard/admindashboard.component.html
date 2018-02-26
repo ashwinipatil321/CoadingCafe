@@ -1,64 +1,133 @@
 <div class="example-container">
-  <div fxLayout="row" fxLayoutGap="10px" fxLayoutGap.xs="0">
+  <div fxLayout="row"  fxLayoutGap="50px" fxLayoutGap.xs="0" >
     <mat-toolbar style="background-color:#ffffff">
-      <div fxFlex="91%"> <img src="/assets/img/cup.png" class="cuplogo" style="cursor:pointer"></div>
-      <img src="../assets/img/logout.png" class ="logout" style="cursor:pointer">
+      <div fxLayout="column" class="searchabar">
+        <img src="/assets/img/cup.png" class="cuplogo" style="cursor:pointer">
+      </div>
+      <div fxLayout="column" fxFlex="67%">
+        <mat-form-field class="example-form-field">
+          <mat-icon >search</mat-icon>
+          <input matInput type="text">
+        </mat-form-field>
+      </div>
+      <div fxLayout="column" fxFlex="12%">
+        <mat-icon>tune</mat-icon>
+      </div>
+      <div fxLayout="column">
+        <img src="../assets/img/logout.png" (click)="logout()" class="logout" style="cursor:pointer">
+      </div>
     </mat-toolbar>
   </div>
-  <div fxLayout="row" fxLayoutGap="10px" fxLayoutGap.xs="0">
+  <div fxLayout="row" fxLayoutGap.xs="0">
     <mat-toolbar class="topnavbar">
       <div fxFlex="81%"></div>
-      <img src="../assets/img/user .png" (click)="openDialog()" style="cursor:pointer" class="add_user" width="50px" height="50px">
-      <div style="margin-left:60px" >
-      <img src="/assets/img/analytics.png" alt="analytics" width="50px" height="50px">
-    </div>
-
+      <img src="../assets/img/user.png" (click)="openDialog()" style="cursor:pointer" class="add_user" width="50px" height="50px">
+      <div style="margin-left:60px">
+        <img src="/assets/img/analytics.png" alt="analytics" width="50px" height="50px">
+      </div>
     </mat-toolbar>
   </div>
 
-  <div class="container" style="margin-top:30px" fxLayout="row" fxLayoutAlign="center" fxLayoutGap="30px" fxLayoutGap.xs="0">
-
+  <div class="container" style="margin-top:20px" fxLayout="row" fxLayoutAlign="center" fxLayoutGap="30px" fxLayoutGap.xs="0">
     <div fxLayout="column" fxFlex="260px" fxFlexOffset.xs="0">
-      <mat-card [style.height]="'120px'">
-        <mat-card-title>Live Deck</mat-card-title>
+      <mat-card [style.height]="'150px'">
+        <mat-card-title style="font-size:15px;margin-top:-10px">Live Deck</mat-card-title>
+        <div style="height:120px;width:200px;margin-left:20px">
+          <div fxLayout="row" fxLayoutGap="20px">
+            <div fxLayout="column" class="BigBox" style="background-color:E73039">
+            </div>
+            <div fxLayout="column" style="background-color:FB8C00;height:20px;width:45px"></div>
+            <div fxLayout="column" style="background-color:FB8C00;height:20px;width:45px"></div>
+          </div>
+          <div fxLayout="row" fxLayoutGap="20px" style="margin-top:10px">
+            <div fxLayout="column" style="background-color:00B0A3;height:20px;width:45px"></div>
+            <div fxLayout="column" style="background-color:00B0A3;height:20px;width:45px;margin-top:-35px"></div>
+          </div>
+        </div>
       </mat-card>
     </div>
     <div fxLayout="column" fxFlex="840px">
-      <mat-card [style.height]="'120px'"></mat-card>
+      <mat-card [style.height]="'150px'">
+        <div fxLayout="row" fxLayoutGap="40px" style="margin-top:60px;height:89px;width:656;">
+          <div fxLayout="column" style="width:140px;height:89px;">
+            <div fxLayout="row" fxLayoutGap="20px">
+              <div fxLayout="column" style="background-color:E73039;height:15px;width:30px"></div>
+              <div fxLayout="column" style="background-color:FB8C00;height:15px;width:30px"></div>
+              <div fxLayout="column" style="background-color:FB8C00;height:15px;width:30px"></div>
+            </div>
+            <div fxLayout="row" fxLayoutGap="20px" style="margin-top:10px">
+              <div fxLayout="column" style="background-color:00B0A3;height:15px;width:30px"></div>
+              <div fxLayout="column" style="background-color:00B0A3;height:15px;width:30px;margin-top:-35px"></div>
+            </div>
+          </div>
+          <div fxLayout="column" style="margin-top:70px;width:140px;height:89px;">
+            <div fxLayout="row" fxLayoutGap="20px">
+              <div fxLayout="column" style="background-color:E73039;height:15px;width:30px"></div>
+              <div fxLayout="column" style="background-color:FB8C00;height:15px;width:30px"></div>
+              <div fxLayout="column" style="background-color:FB8C00;height:15px;width:30px"></div>
+            </div>
+            <div fxLayout="row" fxLayoutGap="20px" style="margin-top:10px">
+              <div fxLayout="column" style="background-color:00B0A3;height:15px;width:30px"></div>
+              <div fxLayout="column" style="background-color:00B0A3;height:15px;width:30px;margin-top:-35px"></div>
+            </div>
+          </div>
+          <div fxLayout="column" style="margin-top:70px;width:140px;height:89px;">
+            <div fxLayout="row" fxLayoutGap="20px">
+              <div fxLayout="column" style="background-color:E73039;height:15px;width:30px"></div>
+              <div fxLayout="column" style="background-color:FB8C00;height:15px;width:30px"></div>
+              <div fxLayout="column" style="background-color:FB8C00;height:15px;width:30px"></div>
+            </div>
+            <div fxLayout="row" fxLayoutGap="20px" style="margin-top:10px">
+              <div fxLayout="column" style="background-color:00B0A3;height:15px;width:30px"></div>
+              <div fxLayout="column" style="background-color:00B0A3;height:15px;width:30px;margin-top:-35px"></div>
+            </div>
+          </div>
+          <div fxLayout="column" style="margin-top:70px;width:140px;height:89px;">
+            <div fxLayout="row" fxLayoutGap="20px">
+              <div fxLayout="column" style="background-color:E73039;height:15px;width:30px"></div>
+              <div fxLayout="column" style="background-color:FB8C00;height:15px;width:30px"></div>
+              <div fxLayout="column" style="background-color:FB8C00;height:15px;width:30px"></div>
+            </div>
+            <div fxLayout="row" fxLayoutGap="20px" style="margin-top:10px">
+              <div fxLayout="column" style="background-color:00B0A3;height:15px;width:30px"></div>
+              <div fxLayout="column" style="background-color:00B0A3;height:15px;width:30px;margin-top:-35px"></div>
+            </div>
+          </div>
+        </div>
+      </mat-card>
     </div>
   </div>
 
-  <div class="container" fxLayout="row" style="margin-top:30px" fxLayoutAlign="center" fxLayoutGap="30px" fxLayoutGap.xs="0">
+  <div class="container" fxLayout="row" style="margin-top:20px" fxLayoutAlign="center" fxLayoutGap="30px" fxLayoutGap.xs="0">
     <div fxLayout="column" fxFlex="260px" fxFlexOffset.xs="0">
       <mat-card [style.height]="'120px'">
         <div fxFlex="70px" style="margin-top: 15px;">
           <img src="/assets/img/ngClickContributor.png" />
         </div>
-        <mat-card-title style="font-size:20px;margin-left:20px">Contributor</mat-card-title>
+        <mat-card-title style="margin-top:2px" class="cardtitle1">Contributor</mat-card-title>
         <div class="count">
           {{contributorCount}}
         </div>
       </mat-card>
     </div>
-    <div fxLayout="column" fxFlex="260px" fxFlexOffset.xs="0">
-      <div fxLayout="column" fxFlex="280px" fxFlexOffset.xs="0">
+      <div fxLayout="column" fxFlex="260px" fxFlexOffset.xs="0">
         <mat-card [style.height]="'120px'">
           <div fxFlex="70px" style="margin-top: 15px;">
             <img src="/assets/img/ngClickApprover.png" />
           </div>
-          <mat-card-title style="font-size:20px;margin-left:20px">Approver</mat-card-title>
+          <mat-card-title style="margin-top:2px" class="cardtitle1">Approver</mat-card-title>
           <div class="countapprover">
             {{approverCount}}
           </div>
         </mat-card>
       </div>
-    </div>
+  
     <div fxLayout="column" fxFlex="260px" fxFlexOffset.xs="0">
       <mat-card [style.height]="'120px'">
         <div fxFlex="70px" style="margin-top: 15px;">
           <img src="/assets/img/ngClickViewer.png" />
         </div>
-        <mat-card-title style="font-size:20px;margin-left:20px">Viewer</mat-card-title>
+        <mat-card-title style="margin-top:2px;" class="cardtitle1">Viewer</mat-card-title>
         <div class="countviwer">
           {{viewerCount}}
         </div>
@@ -70,30 +139,39 @@
         <div fxFlex="70px" style="margin-top: 15px;">
           <img src="/assets/img/users.png" />
         </div>
-        <mat-card-title style="font-size:20px;margin-left:20px;">User</mat-card-title>
+        <mat-card-title style="margin-top:2px" class="cardtitle1">User</mat-card-title>
         <div class="countUser">
-        {{contributorCount + approverCount +  viewerCount}}
+          {{contributorCount + approverCount + viewerCount}}
         </div>
       </mat-card>
     </div>
   </div>
-    </div>
-  <div class="container1" fxLayout="row"  fxLayoutAlign="center" fxLayoutGap="30px" fxLayoutGap.xs="0">
-    <div fxLayout="column" fxFlex="355px" fxFlexOffset.xs="0">
-      <mat-card [style.height]="'80px'">
-
+</div>
+<div class="container1" fxLayout="row" fxLayoutAlign="center" fxLayoutGap="30px" fxLayoutGap.xs="0">
+  <div fxLayout="column" fxFlex="355px" fxFlexOffset.xs="0">
+    <mat-card [style.height]="'80px'">
+      <mat-card style="background-color:E73039;margin-top:-42px" class="objectClass">
+        <img src="/assets/img/link.png" class="objectImage" style="margin-top:-7px;">
       </mat-card>
-    </div>
-      <div fxLayout="column" fxFlex="355px" fxFlexOffset.xs="0">
-        <mat-card [style.height]="'80px'">
-
-        </mat-card>
-      </div>
-    <div fxLayout="column" fxFlex="355px" fxFlexOffset.xs="0">
-      <mat-card [style.height]="'80px'">
-
-
+      <mat-card-title class="cardtitle" style="margin-top:-56px">Data Structure</mat-card-title>
+    </mat-card>
+  </div>
+  <div fxLayout="column" fxFlex="355px" fxFlexOffset.xs="0">
+    <mat-card [style.height]="'80px'">
+      <mat-card style="background-color:FB8C00;margin-top:-42px" class="objectClass">
+        <img src="/assets/img/object.png" class="objectImage" style="margin-top:-7px;">
       </mat-card>
-    </div>
+      <mat-card-title class="cardtitle" style="margin-top:-56px">Object Oriented</mat-card-title>
+
+    </mat-card>
+  </div>
+  <div fxLayout="column" fxFlex="355px" fxFlexOffset.xs="0">
+    <mat-card [style.height]="'80px'">
+      <mat-card style="background-color:00B0A3;margin-top:-42px" class="objectClass">
+        <img src="/assets/img/algorithm.png" class="objectImage" style="margin-top:-7px;">
+      </mat-card>
+      <mat-card-title class="cardtitle" style="margin-top:-56px">Algorithms</mat-card-title>
+    </mat-card>
+  </div>
 
 </div>

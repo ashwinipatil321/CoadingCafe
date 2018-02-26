@@ -26,6 +26,8 @@ import { AuthenticationService,UserService} from './_services/index';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatCardModule} from '@angular/material/card';
 import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
+import { DatastructuredialogComponent } from './datastructuredialog/datastructuredialog.component';
+import { UserdetailsComponent } from './userdetails/userdetails.component';
 
 
 
@@ -36,6 +38,8 @@ import { AdmindashboardComponent } from './admindashboard/admindashboard.compone
     RegisterationComponent,
     LoginComponent,
     AdmindashboardComponent,
+    DatastructuredialogComponent,
+    UserdetailsComponent,
 
     // AddressComponent,
   ],

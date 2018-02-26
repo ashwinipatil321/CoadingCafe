@@ -3,6 +3,9 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { DialogboxComponent } from '../dialogbox/dialogbox.component';
 import { Subscription } from 'rxjs/Subscription';
 import { AuthenticationService, UserService } from '../_services/index';
+import { Router } from '@angular/router';
+import {MatInputModule} from '@angular/material/input';
+
 
 @Component({
   selector: 'app-admindashboard',
@@ -13,11 +16,11 @@ export class AdmindashboardComponent implements OnInit {
   userImg = '/assets/img/user.png';
   logoutImg = '/assets/img/logout.png'
   loading: any;
-  contributorCount : number;
-  approverCount: number;
-  viewerCount: number;
+  contributorCount : any;
+  approverCount: any;
+  viewerCount: any;
 
-  constructor(public dialog: MatDialog, private userService: UserService) {
+  constructor(public dialog: MatDialog, private userService: UserService,private router: Router) {
 
   }
 
@@ -65,5 +68,9 @@ export class AdmindashboardComponent implements OnInit {
 
       })
 
+  }
+  logout()
+  {
+      this.router.navigate(['/login']);
   }
 }

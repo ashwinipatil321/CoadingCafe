@@ -1,0 +1,72 @@
+<div class="example-container" style="background-color:red">
+  <div fxLayout="row"  fxLayoutGap="50px" fxLayoutGap.xs="0" >
+    <mat-toolbar style="background-color:#ffffff">
+      <div fxLayout="column" class="searchabar">
+        <img src="/assets/img/cup.png" class="cuplogo" style="cursor:pointer">
+      </div>
+      <div fxLayout="column" fxFlex="67%">
+        <mat-form-field class="example-form-field">
+          <mat-icon >search</mat-icon>
+          <input matInput type="text">
+        </mat-form-field>
+      </div>
+      <div fxLayout="column" fxFlex="12%">
+        <mat-icon>tune</mat-icon>
+      </div>
+      <div fxLayout="column">
+        <img src="../assets/img/logout.png" (click)="logout()" class="logout" style="cursor:pointer">
+      </div>
+    </mat-toolbar>
+  </div>
+  <div fxLayout="row" fxLayoutGap.xs="0">
+    <mat-toolbar class="topnavbar">
+      <div fxFlex="81%"></div>
+      <img src="../assets/img/user.png" (click)="openDialog()" style="cursor:pointer" class="add_user" width="50px" height="50px">
+      <div style="margin-left:60px">
+        <img src="/assets/img/analytics.png" alt="analytics" width="50px" height="50px">
+      </div>
+    </mat-toolbar>
+  </div>
+  <div style="height:110px;1195;background-color:red">
+
+
+  <div class="container" fxLayout="row" style="margin-top:20px" fxLayoutAlign="center" fxLayoutGap="30px" fxLayoutGap.xs="0">
+    <div fxLayout="column" fxFlex="280px" fxFlexOffset.xs="0">
+      <mat-card [style.height]="'110px'">
+
+        <div class="count">
+
+        </div>
+      </mat-card>
+    </div>
+</div>
+<div class="container" fxLayout="row" style="margin-top:20px" fxLayoutAlign="center" fxLayoutGap="30px" fxLayoutGap.xs="0">
+  <div fxLayout="column" fxFlex="280px" fxFlexOffset.xs="0">
+    <mat-card [style.height]="'110px'">
+
+      <div class="count">
+
+      </div>
+    </mat-card>
+  </div>
+</div>
+<div class="container" fxLayout="row" style="margin-top:20px" fxLayoutAlign="center" fxLayoutGap="30px" fxLayoutGap.xs="0">
+  <div fxLayout="column" fxFlex="280px" fxFlexOffset.xs="0">
+    <mat-card [style.height]="'110px'">
+
+      <div class="count">
+
+      </div>
+    </mat-card>
+  </div>
+</div>
+  <div fxLayout="column" fxFlex="280px" fxFlexOffset.xs="0">
+    <mat-card [style.height]="'110px'">
+
+      <div class="count">
+
+      </div>
+    </mat-card>
+
+</div>
+  </div>
