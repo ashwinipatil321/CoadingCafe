@@ -22,7 +22,7 @@ import { routing } from './app.routing';
 import { RouterModule } from '@angular/router';
 import {MatInputModule} from '@angular/material';
 import { LoginComponent } from './login/login.component';
-import { AuthenticationService,UserService} from './_services/index';
+import { AuthenticationService,UserService,ContributorService} from './_services/index';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatCardModule} from '@angular/material/card';
 import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
@@ -66,7 +66,7 @@ import { UserdetailsComponent } from './userdetails/userdetails.component';
   entryComponents: [
        DialogboxComponent
    ],
-  providers: [AuthenticationService,UserService],
+  providers: [AuthenticationService,UserService,ContributorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

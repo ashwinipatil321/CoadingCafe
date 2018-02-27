@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { MatInputModule } from '@angular/material';
 import { UserService } from '../_services/index';
 import { ActivatedRoute } from '@angular/router';
-import {Observable} from "rxjs/Observable";
 
 @Component({
   selector: 'app-registeration',
@@ -13,6 +12,7 @@ import {Observable} from "rxjs/Observable";
 export class RegisterationComponent implements OnInit {
   model: any = {};
   loading = false;
+  registerData:any[];
   codingcafelogo = "/assets/img/codingcafelogo.png";
   name = 'Select teck stack';
   constructor(private router: Router,
@@ -28,6 +28,7 @@ export class RegisterationComponent implements OnInit {
     this.userService.create(this.model)
     .subscribe( data => {
           console.log("User created successfully.");
+          this.registerData.push(data);
           this.router.navigate(['/login']);
            alert('User registeration done successfully');
         });

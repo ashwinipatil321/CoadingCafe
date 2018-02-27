@@ -9,18 +9,21 @@
   height: 100%;
   width: 100%;
 }
+
 .cuplogo {
   max-width: 85px;
   max-height: 50px;
   padding-left: 83px;
+  margin-right: 87px;
 }
 
 .topnavbar {
   background-color: rgba(0, 0, 0, .06);
   height: 65px;
 }
-.logout
-{
+
+.logout {
   height: 35px;
-  width:35px;
+  width: 35px;
+  margin-right: 80px;
 }
